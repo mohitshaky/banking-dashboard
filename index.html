@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MB Bank — Secure Login</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <style>
+    /* Extra tweaks just for the login page */
+    .form-row { display: flex; gap: 12px; }
+    .forgot-link { font-size: 12px; color: var(--primary); float: right; margin-top: -12px; margin-bottom: 14px; }
+    .login-footer { text-align: center; margin-top: 20px; font-size: 11.5px; color: var(--text-muted); }
+    .login-footer a { color: var(--primary); }
+  </style>
+</head>
+<body class="login-page">
+
+  <div class="login-card">
+
+    <!-- MB Bank Logo -->
+    <div class="login-brand">
+      <svg class="brand-icon" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 3L5 9V19C5 27.284 11.12 34.972 19 37C26.88 34.972 33 27.284 33 19V9L19 3Z"
+              fill="currentColor" opacity="0.15"/>
+        <path d="M19 3L5 9V19C5 27.284 11.12 34.972 19 37C26.88 34.972 33 27.284 33 19V9L19 3Z"
+              stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        <path d="M13 19.5L17 23L25 15" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="brand-name">MB <span>Bank</span></span>
+    </div>
+
+    <p class="login-tagline">Internet Banking — Secure Portal</p>
+
+    <h1 class="login-title">Welcome back</h1>
+    <p class="login-subtitle">Sign in to your account to continue</p>
+
+    <form id="loginForm" novalidate>
+
+      <div class="form-group">
+        <label class="form-label" for="username">Customer ID / Username</label>
+        <div class="input-wrapper">
+          <svg class="input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+          <input type="text" id="username" class="form-input" placeholder="Enter your Customer ID"
+                 autocomplete="username" />
+        </div>
+        <span class="error-msg" id="usernameError">Please enter your username</span>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="password">Password / IPIN</label>
+        <div class="input-wrapper">
+          <svg class="input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+          <input type="password" id="password" class="form-input" placeholder="Enter your IPIN"
+                 autocomplete="current-password" />
+          <button type="button" class="input-toggle" id="togglePassword" title="Show/hide password">
+            <svg id="eyeIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+          </button>
+        </div>
+        <span class="error-msg" id="passwordError">Please enter your password</span>
+      </div>
+
+      <a href="#" class="forgot-link" onclick="return false;">Forgot IPIN?</a>
+
+      <div id="loginError" class="error-msg" style="margin-bottom: 12px; font-size: 13px; padding: 10px; background: var(--danger-light); border-radius: 6px; border-left: 3px solid var(--danger);">
+        Invalid credentials. Please try again.
+      </div>
+
+      <button type="submit" class="btn-login" id="loginBtn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+        </svg>
+        Secure Login
+      </button>
+    </form>
+
+    <!-- Demo credentials hint -->
+    <div class="demo-hint">
+      <p>
+        <strong>Demo Access:</strong><br/>
+        Customer ID: <strong>user</strong> &nbsp;|&nbsp; IPIN: <strong>password123</strong>
+      </p>
+    </div>
+
+    <!-- Security badge -->
+    <div class="login-security">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+      </svg>
+      256-bit SSL encrypted &nbsp;·&nbsp; NPCI Certified &nbsp;·&nbsp; RBI Compliant
+    </div>
+
+    <p class="login-footer">
+      &copy; 2024 MB Bank Ltd. &nbsp;·&nbsp;
+      <a href="#">Privacy Policy</a> &nbsp;·&nbsp;
+      <a href="#">Terms of Use</a>
+    </p>
+
+  </div>
+
+  <script src="js/auth.js"></script>
+
+</body>
+</html>
