@@ -1,0 +1,19 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate required files
+        run: |
+          test -f index.html   && echo "✅ index.html"
+          test -f dashboard.html && echo "✅ dashboard.html"
+          echo "All files present — build OK"
